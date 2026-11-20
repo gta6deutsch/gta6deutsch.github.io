@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA 6 Deutsch — Inoffizielle GTA 6 Guides, Rechner &amp; Tipps</title>
+<meta name="description" content="GTA 6 Deutsch: inoffizielle Fan-Guides auf Deutsch — Verdienst-Rechner, Beute-Aufteiler, Fahrzeug-Vergleich, Missions-Checkliste, Fortschritts-Tracker, Fahrzeugtabelle und Guides zu Vice City, Lucia und Jason.">
+<meta name="theme-color" content="#241040">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+:root{--d:#241040;--d2:#3b1a63;--a:#ec4899;--ad:#be185d;--ab:#fce7f3;--bg:#f6f3fb;--card:#fff;--text:#241040;--muted:#6b6480;--border:#e4ddf2;--green:#15803d;--green-bg:#dcfce7;--red:#b91c1c;--red-bg:#fee2e2;--radius:14px;--shadow:0 1px 3px rgba(36,16,64,.08),0 4px 14px rgba(36,16,64,.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+a{color:var(--ad)}
+header{background:var(--d);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.header-in{display:flex;align-items:center;gap:14px;padding:13px 16px;max-width:1080px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;flex:1;min-width:200px}
+.brand .mark{width:38px;height:38px;border-radius:9px;background:var(--a);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:19px;flex:none}
+.brand b{font-size:19px}.brand b span{color:var(--a)}
+.brand small{display:block;font-size:11.5px;color:#c4b5fd;font-weight:400}
+nav.main-nav{display:flex;gap:4px;flex-wrap:wrap}
+nav.main-nav a{color:#ddd6fe;text-decoration:none;font-size:14px;font-weight:600;padding:8px 11px;border-radius:8px}
+nav.main-nav a:hover{background:var(--d2);color:#fff}
+.hero{background:linear-gradient(135deg,var(--d) 0%,#4c1d95 60%,#7e22ce 100%);color:#fff;padding:44px 0 40px}
+.hero h1{font-size:clamp(26px,5vw,40px);line-height:1.2;max-width:760px}
+.hero h1 span{color:#f9a8d4}
+.hero p{color:#e9d5ff;font-size:16px;max-width:720px;margin-top:12px}
+.hero .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.hero .badge{background:rgba(236,72,153,.16);border:1px solid rgba(236,72,153,.45);color:#fbcfe8;font-size:13px;font-weight:600;border-radius:999px;padding:6px 13px}
+.disclaimer{background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #ea580c;border-radius:10px;padding:12px 14px;font-size:13.5px;color:#7c2d12;margin-top:16px}
+section{padding:34px 0 8px}
+section h2{font-size:24px;margin-bottom:6px}
+.section-sub{color:var(--muted);font-size:15px;max-width:760px;margin-bottom:20px}
+.calc-grid{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:860px){.calc-grid{grid-template-columns:1fr 1fr}.calc-grid .wide{grid-column:1 / -1}}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 20px;border-top:4px solid var(--a)}
+.card h3{font-size:18px;margin-bottom:2px}
+.card .tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ad)}
+.card .desc{font-size:14px;color:var(--muted);margin:6px 0 16px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:6px}
+.field label small{font-weight:400;color:var(--muted)}
+.field input,.field select{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;outline:none;background:#fff;color:var(--text)}
+.field input:focus,.field select:focus{border-color:var(--a);box-shadow:0 0 0 3px rgba(236,72,153,.18)}
+.field-row{display:grid;grid-template-columns:1fr;gap:0 12px}
+@media(min-width:560px){.field-row{grid-template-columns:1fr 1fr}}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--a);color:#fff;border:0;border-radius:10px;padding:12px 22px;font-size:15px;font-weight:800;min-height:46px;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--ad)}
+.results{display:none;margin-top:16px}.results.show{display:block}
+.results h4{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:560px){.stat-grid{grid-template-columns:repeat(3,1fr)}}
+.stat{background:#f8fafc;border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center}
+.stat.hero{background:var(--ab);border-color:#fbcfe8}
+.stat .k{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font-size:19px;font-weight:800;margin-top:3px;word-break:break-word}
+.stat.hero .v{color:#9d174d}
+.stat.wide{grid-column:1 / -1}
+.verdict{margin-top:10px;border-radius:10px;padding:11px 14px;font-size:14px;font-weight:600}
+.verdict.ok{background:var(--green-bg);color:var(--green)}
+.verdict.warn{background:var(--ab);color:#9d174d}
+.note{font-size:12.5px;color:var(--muted);margin-top:12px}
+.table-wrap{overflow-x:auto;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th{background:var(--d);color:#fff;text-align:left;padding:11px 12px;font-size:13px}
+td{padding:10px 12px;border-bottom:1px solid var(--border)}
+tr:nth-child(even) td{background:#f8fafc}
+.guide-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:640px){.guide-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.guide-grid{grid-template-columns:1fr 1fr 1fr}}
+.guide{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 18px;border-left:4px solid var(--a)}
+.guide .g-tag{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ad)}
+.guide h3{font-size:16.5px;margin:5px 0 7px}.guide p{font-size:14px;color:#334155}
+.guide-link{margin-top:10px;font-size:14px;font-weight:700}.guide-link a{text-decoration:none}.guide-link a:hover{text-decoration:underline}
+.faq{max-width:820px}.faq-item{background:#fff;border-radius:12px;box-shadow:var(--shadow);margin-bottom:10px;overflow:hidden}
+.faq-item button{width:100%;text-align:left;background:none;border:0;padding:16px 18px;font-size:15.5px;font-weight:700;font-family:inherit;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq-item button .chev{color:var(--ad);font-size:20px;flex:none}
+.faq-item .answer{display:none;padding:0 18px 16px;font-size:14.5px;color:#334155}
+.faq-item.open .answer{display:block}.faq-item.open .chev{transform:rotate(45deg)}
+.about{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 20px}
+.about p{font-size:14.5px;color:#334155;margin-bottom:10px}
+footer{background:var(--d);color:#c4b5fd;margin-top:44px;padding:30px 0 26px}
+footer .cols{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:640px){footer .cols{grid-template-columns:2fr 1fr 1fr}}
+footer h4{color:#fff;font-size:15px;margin-bottom:10px}
+footer p,footer a{font-size:13.5px;color:#c4b5fd;text-decoration:none}
+footer a:hover{color:#fff}
+footer ul{list-style:none}footer li{margin-bottom:6px}
+.copy{border-top:1px solid #3b1a63;margin-top:22px;padding-top:16px;font-size:12.5px;text-align:center}
+.check label{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border);font-size:14.5px;cursor:pointer}
+.check input{width:18px;height:18px;margin-top:3px;accent-color:var(--a)}
+.progress{height:12px;background:#ede9fe;border-radius:999px;overflow:hidden;margin:10px 0}
+.progress i{display:block;height:100%;background:var(--a);width:0%}
+</style>
+</head>
+<body>
+<header><div class="header-in"><a class="brand" href="index.html"><span class="mark">G6</span><span><b>GTA 6 <span>Deutsch</span></b><small>gta6deutsch.github.io</small></span></a><nav class="main-nav"><a href="#rechner">Rechner</a><a href="#tabelle">Fahrzeuge</a><a href="#guides">Guides</a><a href="#faq">FAQ</a></nav></div></header>
+<main>
+<div class="hero"><div class="wrap"><h1>GTA 6 Deutsch — <span>Guides, Rechner &amp; Tipps</span> für Leonida</h1><p>Das Spiel ist seit dem 19. November 2026 draußen. Hier findest du inoffizielle Fan-Guides auf Deutsch: Wie du in Vice City Geld verdienst, welche Fahrzeuge sich lohnen, wo die wichtigsten Orte liegen — und fünf Rechner, die dir beim Planen helfen.</p><div class="badges"><span class="badge">5 Rechner</span><span class="badge">6 Guides</span><span class="badge">Fahrzeugtabelle</span><span class="badge">100 % kostenlos</span></div><div class="disclaimer"><strong>Hinweis:</strong> Inoffizieller Fan-Guide — nicht mit Rockstar Games verbunden. Alle Zahlen sind Schätzungen der Community und Näherungswerte aus dem Spiel, keine offiziellen Daten von Rockstar Games.</div></div></div>
+
+<section id="rechner"><div class="wrap"><h2>Rechner</h2><p class="section-sub">Alle Rechner laufen lokal in deinem Browser. Alle Geldbeträge sind In-Game-Dollar und beruhen auf Schätzungen der Community.</p>
+<div class="calc-grid">
+
+<div class="card" id="calc-verdienst"><p class="tag">Rechner 1</p><h3>Verdienst-Rechner im Spiel</h3><p class="desc">Wie viel In-Game-Geld bleibt dir nach Kosten übrig? Wähle eine Tätigkeit und deine Spielzeit.</p>
+<div class="field"><label for="v-rate">Tätigkeit (Verdienst pro Stunde, Schätzung)</label><select id="v-rate"><option value="8500">Taxifahren — ca. $8.500 / Std.</option><option value="12000">Lieferfahrten — ca. $12.000 / Std.</option><option value="15000">Abschleppdienst — ca. $15.000 / Std.</option><option value="22000">Heist-Vorbereitung — ca. $22.000 / Std.</option><option value="9000">Straßenrennen — ca. $9.000 / Std.</option><option value="6000">Gelegenheitsjobs — ca. $6.000 / Std.</option></select></div>
+<div class="field-row"><div class="field"><label for="v-hours">Stunden pro Woche</label><input id="v-hours" type="number" min="1" max="60" value="10"></div><div class="field"><label for="v-weeks">Wochen</label><input id="v-weeks" type="number" min="1" max="52" value="4"></div></div>
+<div class="field"><label for="v-cost">Kosten (Munition, Reparaturen, Essen) in %</label><input id="v-cost" type="number" min="0" max="80" value="15"></div>
+<div class="btn-row"><button class="btn" id="btn-verdienst" type="button">Verdienst berechnen</button></div>
+<div class="results" id="res-verdienst"><h4>Ergebnis</h4><div class="stat-grid"><div class="stat"><div class="k">Brutto</div><div class="v" id="v-gross">–</div></div><div class="stat"><div class="k">Kosten</div><div class="v" id="v-costs">–</div></div><div class="stat hero"><div class="k">Netto</div><div class="v" id="v-net">–</div></div><div class="stat"><div class="k">Pro Tag</div><div class="v" id="v-day">–</div></div><div class="stat"><div class="k">Pro Stunde (netto)</div><div class="v" id="v-hour">–</div></div></div><div class="verdict ok" id="v-verdict"></div><p class="note">Beispiel: 10 Stunden pro Woche über 4 Wochen als Lieferfahrer (12.000 $/Std., 15 % Kosten) ergeben 480.000 $ brutto und 408.000 $ netto.</p></div></div>
+
+<div class="card" id="calc-beute"><p class="tag">Rechner 2</p><h3>Beute-Aufteiler für Heists</h3><p class="desc">Teile die Beute eines Heists fair auf: Der Anführer bekommt einen festen Anteil, der Rest wird gleichmäßig geteilt.</p>
+<div class="field"><label for="b-total">Gesamtbeute (In-Game-$)</label><input id="b-total" type="number" min="1000" value="1000000"></div>
+<div class="field-row"><div class="field"><label for="b-players">Anzahl Spieler (2–4)</label><input id="b-players" type="number" min="2" max="4" value="4"></div><div class="field"><label for="b-leader">Anteil des Anführers (%)</label><input id="b-leader" type="number" min="0" max="60" value="25"></div></div>
+<div class="btn-row"><button class="btn" id="btn-beute" type="button">Beute aufteilen</button></div>
+<div class="results" id="res-beute"><h4>Ergebnis</h4><div class="stat-grid"><div class="stat hero"><div class="k">Anführer</div><div class="v" id="b-leader-out">–</div></div><div class="stat"><div class="k">Jede weitere Person</div><div class="v" id="b-each">–</div></div><div class="stat"><div class="k">Rest gesamt</div><div class="v" id="b-rest">–</div></div></div><div class="verdict ok" id="b-verdict"></div><p class="note">Beispiel: 1.000.000 $ bei 4 Spielern und 25 % Anführeranteil = 250.000 $ für den Anführer und 250.000 $ für jede weitere Person.</p></div></div>
+
+<div class="card" id="calc-fahrzeug"><p class="tag">Rechner 3</p><h3>Fahrzeug-Vergleich</h3><p class="desc">Vergleiche zwei Fahrzeuge aus unserer Tabelle: Tempo, Beschleunigung, Handling und Preis.</p>
+<div class="field-row"><div class="field"><label for="f-a">Fahrzeug A</label><select id="f-a"><option value="itali">Grotti Itali GTO Stinger TT</option><option value="comet">Pfister Comet S2 Cabrio</option><option value="banshee">Bravado Banshee GTS</option><option value="sultan">Karin Sultan RS Classic</option><option value="dominator">Vapid Dominator GT</option><option value="krieger">Benefactor Krieger</option></select></div><div class="field"><label for="f-b">Fahrzeug B</label><select id="f-b"><option value="krieger">Benefactor Krieger</option><option value="comet">Pfister Comet S2 Cabrio</option><option value="banshee">Bravado Banshee GTS</option><option value="itali">Grotti Itali GTO Stinger TT</option><option value="sultan">Karin Sultan RS Classic</option><option value="dominator">Vapid Dominator GT</option></select></div></div>
+<div class="btn-row"><button class="btn" id="btn-fahrzeug" type="button">Fahrzeuge vergleichen</button></div>
+<div class="results" id="res-fahrzeug"><h4>Ergebnis</h4><div class="stat-grid"><div class="stat hero wide"><div class="k">Gesamtsieger</div><div class="v" id="f-winner">–</div></div><div class="stat"><div class="k">Tempo-Unterschied</div><div class="v" id="f-speed">–</div></div><div class="stat"><div class="k">Beschleunigung (0–100)</div><div class="v" id="f-accel">–</div></div><div class="stat"><div class="k">Preis-Unterschied</div><div class="v" id="f-price">–</div></div><div class="stat"><div class="k">Punktestand</div><div class="v" id="f-score">–</div></div></div><div class="verdict ok" id="f-verdict"></div><p class="note">Alle Fahrzeugwerte sind Schätzungen der Community, keine offiziellen Rockstar-Daten.</p></div></div>
+
+<div class="card" id="calc-missionen"><p class="tag">Rechner 4</p><h3>Missions-Checkliste</h3><p class="desc">Hake ab, was du schon geschafft hast — der Rechner zeigt deinen Fortschritt und die restliche Spielzeit (Schätzungen).</p>
+<div class="check" id="mission-list">
+<label><input type="checkbox"> Einführung: Ankunft in Leonida (ca. 25 Min.)</label>
+<label><input type="checkbox"> Lucia kennenlernen (ca. 35 Min.)</label>
+<label><input type="checkbox"> Erste Fahrt durch Vice City (ca. 20 Min.)</label>
+<label><input type="checkbox"> Der erste große Job (ca. 45 Min.)</label>
+<label><input type="checkbox"> Kontakt in den Sümpfen (ca. 30 Min.)</label>
+<label><input type="checkbox"> Rennen am Ocean Drive (ca. 40 Min.)</label>
+<label><input type="checkbox"> Geldwäsche einrichten (ca. 25 Min.)</label>
+<label><input type="checkbox"> Das große Finale, Teil 1 (ca. 50 Min.)</label>
+<label><input type="checkbox"> Das große Finale, Teil 2 (ca. 35 Min.)</label>
+<label><input type="checkbox"> Nachspiel: Freies Spiel in Leonida (ca. 30 Min.)</label>
+</div>
+<div class="results show" id="res-missionen"><h4>Dein Fortschritt</h4><div class="progress"><i id="m-bar"></i></div><div class="stat-grid"><div class="stat hero"><div class="k">Fortschritt</div><div class="v" id="m-pct">0 %</div></div><div class="stat"><div class="k">Abgeschlossen</div><div class="v" id="m-count">0 von 10 Missionen</div></div><div class="stat"><div class="k">Restzeit (Schätzung)</div><div class="v" id="m-remaining">335 Minuten</div></div></div><p class="note">Gesamtdauer aller zehn Abschnitte: ca. 335 Minuten (rund 5,5 Stunden) — reine Missionszeit ohne Nebenaktivitäten.</p></div></div>
+
+<div class="card wide" id="calc-fortschritt"><p class="tag">Rechner 5</p><h3>Fortschritts-Tracker</h3><p class="desc">Wie weit bist du insgesamt? Story, Nebenmissionen, Sammelobjekte und Vermögen fließen in einen Gesamtfortschritt ein.</p>
+<div class="field-row"><div class="field"><label for="p-story">Story-Fortschritt (%)</label><input id="p-story" type="number" min="0" max="100" value="60"></div><div class="field"><label for="p-money">Vermögen (In-Game-$)</label><input id="p-money" type="number" min="0" value="500000"></div></div>
+<div class="field-row"><div class="field"><label for="p-side-done">Nebenmissionen abgeschlossen</label><input id="p-side-done" type="number" min="0" value="12"></div><div class="field"><label for="p-side-total">Nebenmissionen gesamt</label><input id="p-side-total" type="number" min="1" value="20"></div></div>
+<div class="field-row"><div class="field"><label for="p-coll-done">Sammelobjekte gefunden</label><input id="p-coll-done" type="number" min="0" value="30"></div><div class="field"><label for="p-coll-total">Sammelobjekte gesamt</label><input id="p-coll-total" type="number" min="1" value="50"></div></div>
+<div class="btn-row"><button class="btn" id="btn-fortschritt" type="button">Fortschritt berechnen</button></div>
+<div class="results" id="res-fortschritt"><h4>Ergebnis</h4><div class="stat-grid"><div class="stat hero"><div class="k">Gesamtfortschritt</div><div class="v" id="p-overall">–</div></div><div class="stat"><div class="k">Nebenmissionen</div><div class="v" id="p-side">–</div></div><div class="stat"><div class="k">Sammelobjekte</div><div class="v" id="p-coll">–</div></div><div class="stat"><div class="k">Vermögen (Ziel 1 Mio. $)</div><div class="v" id="p-money-pct">–</div></div></div><div class="verdict ok" id="p-verdict"></div><p class="note">Gewichtung: Story 50 %, Nebenmissionen 25 %, Sammelobjekte 15 %, Vermögen 10 %. Beispiel: 60 % Story, 12/20 Nebenmissionen, 30/50 Sammelobjekte, 500.000 $ → 59 % gesamt.</p></div></div>
+
+</div></div></section>
+
+<section id="tabelle"><div class="wrap"><h2>Fahrzeug-Vergleichstabelle</h2><p class="section-sub">Sechs beliebte Fahrzeuge im Überblick. Alle Werte sind Schätzungen der Community — keine offiziellen Rockstar-Daten.</p>
+<div class="table-wrap"><table><tr><th>Fahrzeug</th><th>Klasse</th><th>Tempo (km/h, Schätzung)</th><th>0–100 km/h (s, Schätzung)</th><th>Handling (von 10)</th><th>Preis (In-Game-$)</th></tr>
+<tr><td>Grotti Itali GTO Stinger TT</td><td>Supersportwagen</td><td>214</td><td>2,9</td><td>9,1</td><td>2.495.000</td></tr>
+<tr><td>Benefactor Krieger</td><td>Supersportwagen</td><td>208</td><td>3,0</td><td>9,0</td><td>2.875.000</td></tr>
+<tr><td>Bravado Banshee GTS</td><td>Sportwagen</td><td>205</td><td>3,1</td><td>8,8</td><td>1.780.000</td></tr>
+<tr><td>Pfister Comet S2 Cabrio</td><td>Sportwagen</td><td>198</td><td>3,4</td><td>8,6</td><td>1.925.000</td></tr>
+<tr><td>Vapid Dominator GT</td><td>Muscle-Car</td><td>196</td><td>3,5</td><td>8,0</td><td>1.595.000</td></tr>
+<tr><td>Karin Sultan RS Classic</td><td>Sportlimousine</td><td>182</td><td>3,8</td><td>8,2</td><td>1.420.000</td></tr>
+</table></div><p class="note">Tipp: Der Itali GTO Stinger TT ist nach Community-Messungen der schnellste, der Krieger liegt beim Handling fast gleichauf. Für Anfänger ist der Sultan RS Classic das beste Preis-Leistungs-Verhältnis.</p></div></section>
+
+<section id="guides"><div class="wrap"><h2>Guides</h2><p class="section-sub">Ausführliche Anleitungen auf Deutsch — für Einsteiger und für Spieler, die alles aus Leonida herausholen wollen.</p>
+<div class="guide-grid">
+<div class="guide"><p class="g-tag">Einsteiger</p><h3>GTA 6 Anfänger-Guide</h3><p>Die ersten Stunden in Leonida: Steuerung, erste Missionen, Geld und die wichtigsten Einstellungen.</p><p class="guide-link"><a href="guides/anfaenger-guide.html">Guide lesen &rarr;</a></p></div>
+<div class="guide"><p class="g-tag">Geld</p><h3>Schnell Geld verdienen in GTA 6</h3><p>Die besten legalen Verdienstwege im Spiel — von Lieferfahrten bis zu Heists, mit Verdienst pro Stunde.</p><p class="guide-link"><a href="guides/schnell-geld-verdienen.html">Guide lesen &rarr;</a></p></div>
+<div class="guide"><p class="g-tag">Fahrzeuge</p><h3>Die besten Fahrzeuge in GTA 6</h3><p>Supersportwagen, Allrounder und Geländewagen: Welche Autos sich für Rennen, Missionen und den Alltag lohnen.</p><p class="guide-link"><a href="guides/beste-fahrzeuge.html">Guide lesen &rarr;</a></p></div>
+<div class="guide"><p class="g-tag">Karte</p><h3>Vice City Karte und wichtige Orte</h3><p>Ocean Drive, der Hafen, die Sümpfe und die wichtigsten Händler, Werkstätten und Verstecke in Leonida.</p><p class="guide-link"><a href="guides/vice-city-karte-orte.html">Guide lesen &rarr;</a></p></div>
+<div class="guide"><p class="g-tag">Charaktere</p><h3>Lucia und Jason — Charakter-Guide</h3><p>Die beiden Hauptfiguren: ihre Stärken, ihre Geschichte und wie du ihre Fähigkeiten am besten nutzt.</p><p class="guide-link"><a href="guides/lucia-und-jason.html">Guide lesen &rarr;</a></p></div>
+<div class="guide"><p class="g-tag">Tipps</p><h3>15 Tipps für neue Spieler</h3><p>Von der Minimap bis zum Sparen: fünfzehn praktische Tipps, die dir viele Frustmomente ersparen.</p><p class="guide-link"><a href="guides/15-tipps-neue-spieler.html">Guide lesen &rarr;</a></p></div>
+</div></div></section>
+
+<section id="faq"><div class="wrap"><h2>Häufige Fragen</h2><p class="section-sub">Kurze Antworten auf die Fragen, die uns am häufigsten erreichen.</p>
+<div class="faq">
+<div class="faq-item"><button type="button">Ist diese Seite offiziell von Rockstar Games? <span class="chev">+</span></button><div class="answer">Nein. GTA 6 Deutsch ist ein inoffizieller Fan-Guide und steht in keiner Verbindung zu Rockstar Games oder Take-Two Interactive. Alle Inhalte sind von Fans für Fans geschrieben.</div></div>
+<div class="faq-item"><button type="button">Sind die Zahlen auf dieser Seite offiziell? <span class="chev">+</span></button><div class="answer">Nein. Alle Fahrzeugwerte, Verdienste und Zeiten sind Schätzungen der Community und Näherungswerte aus dem Spiel. Rockstar veröffentlicht solche Werte nicht offiziell, und sie können sich durch Updates ändern.</div></div>
+<div class="faq-item"><button type="button">Kann ich hier GTA 6 herunterladen? <span class="chev">+</span></button><div class="answer">Nein — und das solltest du auch nirgendwo anders versuchen. Kaufe das Spiel nur über offizielle Händler und Plattformen. Diese Seite bietet ausschließlich Guides und Rechner, keine Downloads.</div></div>
+<div class="faq-item"><button type="button">Welches Fahrzeug ist das beste für Anfänger? <span class="chev">+</span></button><div class="answer">Nach Community-Erfahrung der Karin Sultan RS Classic: Er ist vergleichsweise günstig, gut zu fahren und stark genug für die meisten frühen Missionen. Später lohnt sich ein Supersportwagen wie der Itali GTO Stinger TT.</div></div>
+<div class="faq-item"><button type="button">Wie funktioniert der Beute-Aufteiler? <span class="chev">+</span></button><div class="answer">Du gibst die Gesamtbeute, die Spielerzahl und den Anteil des Anführers ein. Der Anführer bekommt seinen Anteil zuerst, der Rest wird gleichmäßig auf die anderen Spieler aufgeteilt — so gibt es vor dem Heist keine Diskussionen.</div></div>
+</div></div></section>
+
+<section><div class="wrap"><div class="about"><h2>Über GTA 6 Deutsch</h2><p>GTA 6 Deutsch ist ein unabhängiges Fan-Projekt. Wir spielen GTA 6 seit dem Release am 19. November 2026 und schreiben unsere Guides selbst — aus eigener Spielerfahrung und aus dem, was die Community herausgefunden hat.</p><p><strong>Haftungsausschluss:</strong> Inoffizieller Fan-Guide — nicht mit Rockstar Games verbunden. Alle Zahlen sind Schätzungen der Community und Näherungswerte aus dem Spiel, keine offiziellen Daten von Rockstar Games. Diese Seite enthält keine Downloads, keine offiziellen Bilder oder Inhalte von Rockstar Games und keine Cheats, die gegen die Nutzungsbedingungen verstoßen.</p></div></div></section>
+</main>
+<footer><div class="wrap"><div class="cols"><div><h4>GTA 6 Deutsch</h4><p>Inoffizielle GTA 6 Guides auf Deutsch — Rechner, Tipps und Kartenhilfen für das Spiel. Inoffizieller Fan-Guide — nicht mit Rockstar Games verbunden. Alle Zahlen sind Schätzungen der Community und Näherungswerte aus dem Spiel, keine offiziellen Daten von Rockstar Games.</p><p style="margin-top:8px">gta6deutsch.github.io</p></div><div><h4>Rechner</h4><ul><li><a href="#calc-verdienst">Verdienst-Rechner</a></li><li><a href="#calc-beute">Beute-Aufteiler</a></li><li><a href="#calc-fahrzeug">Fahrzeug-Vergleich</a></li><li><a href="#calc-missionen">Missions-Checkliste</a></li><li><a href="#calc-fortschritt">Fortschritts-Tracker</a></li></ul></div><div><h4>Guides</h4><ul><li><a href="guides/anfaenger-guide.html">GTA 6 Anfänger-Guide</a></li><li><a href="guides/schnell-geld-verdienen.html">Schnell Geld verdienen</a></li><li><a href="guides/beste-fahrzeuge.html">Die besten Fahrzeuge</a></li><li><a href="guides/vice-city-karte-orte.html">Vice City Karte und Orte</a></li><li><a href="guides/lucia-und-jason.html">Lucia und Jason</a></li><li><a href="guides/15-tipps-neue-spieler.html">15 Tipps für neue Spieler</a></li></ul></div></div><div class="copy">© 2026 GTA 6 Deutsch · Inoffizieller Fan-Guide — nicht mit Rockstar Games verbunden. Alle Zahlen sind Schätzungen der Community und Näherungswerte aus dem Spiel, keine offiziellen Daten von Rockstar Games.</div></div></footer>
+<script>
+// Pure functions (testable in Node) — all money values are in-game $ (community estimates).
+function calcVerdienst(rate, hours, weeks, costPct){
+  var gross = rate*hours*weeks;
+  var costs = gross*costPct/100;
+  var net = gross-costs;
+  return {gross:Math.round(gross), costs:Math.round(costs), net:Math.round(net), perDay:Math.round(net/Math.max(1,weeks*7)), perHour:Math.round(net/Math.max(1,hours*weeks))};
+}
+function calcBeute(total, players, leaderPct){
+  var leader = total*leaderPct/100;
+  var rest = total-leader;
+  var each = rest/Math.max(1,players-1);
+  return {leader:Math.round(leader), each:Math.round(each), rest:Math.round(rest)};
+}
+var VEHICLES = {
+  "comet":{"name":"Pfister Comet S2 Cabrio","speed":198,"accel":3.4,"handling":8.6,"price":1925000},
+  "itali":{"name":"Grotti Itali GTO Stinger TT","speed":214,"accel":2.9,"handling":9.1,"price":2495000},
+  "banshee":{"name":"Bravado Banshee GTS","speed":205,"accel":3.1,"handling":8.8,"price":1780000},
+  "sultan":{"name":"Karin Sultan RS Classic","speed":182,"accel":3.8,"handling":8.2,"price":1420000},
+  "dominator":{"name":"Vapid Dominator GT","speed":196,"accel":3.5,"handling":8.0,"price":1595000},
+  "krieger":{"name":"Benefactor Krieger","speed":208,"accel":3.0,"handling":9.0,"price":2875000}
+};
+function calcFahrzeug(a,b){
+  var va=VEHICLES[a], vb=VEHICLES[b];
+  var score=function(v){return v.speed/10 + (10-v.accel)*4 + v.handling*5;};
+  var sa=score(va), sb=score(vb);
+  return {a:va.name,b:vb.name,speedDiff:va.speed-vb.speed,accelDiff:+(va.accel-vb.accel).toFixed(1),priceDiff:va.price-vb.price,winner: sa>=sb?va.name:vb.name, scoreA:+sa.toFixed(1), scoreB:+sb.toFixed(1)};
+}
+function calcMissionen(done, durations){
+  var total=durations.reduce(function(s,x){return s+x;},0);
+  var doneTime=0; for(var i=0;i<done.length;i++){ if(done[i]) doneTime+=durations[i]; }
+  var count=done.filter(Boolean).length;
+  return {count:count, total:done.length, pct:Math.round(count/done.length*100), remainingMin: total-doneTime, totalMin: total};
+}
+function calcFortschritt(story, sideDone, sideTotal, collDone, collTotal, money){
+  var sidePct = sideTotal? sideDone/sideTotal*100:0;
+  var collPct = collTotal? collDone/collTotal*100:0;
+  var moneyPct = Math.min(100, money/1000000*100);
+  var overall = Math.round(story*0.5 + sidePct*0.25 + collPct*0.15 + moneyPct*0.10);
+  return {sidePct:Math.round(sidePct), collPct:Math.round(collPct), moneyPct:Math.round(moneyPct), overall:overall};
+}
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', function(){
+    var $=function(id){return document.getElementById(id);};
+    function show(id){var el=$(id); if(el) el.classList.add('show');}
+    function fmt(n){return n.toLocaleString('de-DE');}
+    function set(id,txt){var el=$(id); if(el) el.textContent=txt;}
+    var b1=$('btn-verdienst'); if(b1) b1.addEventListener('click',function(){
+      var r=calcVerdienst(+$('v-rate').value, +$('v-hours').value, +$('v-weeks').value, +$('v-cost').value);
+      set('v-gross','$'+fmt(r.gross)); set('v-costs','$'+fmt(r.costs)); set('v-net','$'+fmt(r.net));
+      set('v-day','$'+fmt(r.perDay)); set('v-hour','$'+fmt(r.perHour));
+      set('v-verdict','Bei diesen Werten bleiben dir nach Kosten etwa $'+fmt(r.net)+' in '+$('v-weeks').value+' Wochen. Alle Beträge sind Schätzungen der Community.');
+      show('res-verdienst');});
+    var b2=$('btn-beute'); if(b2) b2.addEventListener('click',function(){
+      var r=calcBeute(+$('b-total').value, +$('b-players').value, +$('b-leader').value);
+      set('b-leader-out','$'+fmt(r.leader)); set('b-each','$'+fmt(r.each)); set('b-rest','$'+fmt(r.rest));
+      set('b-verdict','Der Anführer erhält $'+fmt(r.leader)+'. Jede weitere Person erhält $'+fmt(r.each)+'.');
+      show('res-beute');});
+    var b3=$('btn-fahrzeug'); if(b3) b3.addEventListener('click',function(){
+      var r=calcFahrzeug($('f-a').value, $('f-b').value);
+      set('f-winner',r.winner); set('f-speed', (r.speedDiff>=0?'+':'')+r.speedDiff+' km/h'); set('f-accel',(r.accelDiff>0?'+':'')+r.accelDiff+' s'); set('f-price','$'+fmt(r.priceDiff));
+      set('f-score', r.scoreA+' vs. '+r.scoreB+' Punkte');
+      set('f-verdict','Gesamtsieger nach unserer Punktewertung (Tempo, Beschleunigung, Handling): '+r.winner+'. Alle Werte sind Schätzungen der Community.');
+      show('res-fahrzeug');});
+    // Mission checklist
+    var boxes=document.querySelectorAll('#mission-list input[type=checkbox]');
+    var durs=[25,35,20,45,30,40,25,50,35,30];
+    function updMission(){
+      var done=[]; boxes.forEach(function(cb){done.push(cb.checked);});
+      var r=calcMissionen(done,durs);
+      set('m-pct', r.pct+' %'); set('m-count', r.count+' von '+r.total+' Missionen');
+      set('m-remaining', r.remainingMin+' Minuten (ca. '+Math.round(r.remainingMin/60*10)/10+' Stunden)');
+      var bar=$('m-bar'); if(bar) bar.style.width=r.pct+'%';
+      show('res-missionen');}
+    boxes.forEach(function(cb){cb.addEventListener('change',updMission);});
+    var b5=$('btn-fortschritt'); if(b5) b5.addEventListener('click',function(){
+      var r=calcFortschritt(+$('p-story').value, +$('p-side-done').value, +$('p-side-total').value, +$('p-coll-done').value, +$('p-coll-total').value, +$('p-money').value);
+      set('p-overall', r.overall+' %'); set('p-side', r.sidePct+' %'); set('p-coll', r.collPct+' %'); set('p-money-pct', r.moneyPct+' %');
+      set('p-verdict', r.overall>=80?'Fast geschafft — nur noch wenige Prozent bis zur Komplettierung!':r.overall>=50?'Gute Mitte: Über die Hälfte des Fortschritts ist erreicht.':'Noch am Anfang — arbeite zuerst die Story und die Nebenmissionen ab.');
+      show('res-fortschritt');});
+    document.querySelectorAll('.faq-item button').forEach(function(btn){btn.addEventListener('click',function(){btn.parentElement.classList.toggle('open');});});
+  });
+}
+</script>
+</body>
+</html>

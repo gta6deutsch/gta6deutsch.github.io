@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gta6deutsch.github.io/sitemap.xml
